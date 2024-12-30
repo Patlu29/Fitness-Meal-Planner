@@ -49,52 +49,62 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div className="registration-container">
-      <div className="illustration1">
-        <img src={Illustration1} alt="Running Illustration" />
-      </div>
-      <div className="registration-form">
-        <div className="header-with-logo">
-          <img src={Logo} alt="FitMeal Logo" className="logo" />
-          <h1 id="header">FitMeal Partner</h1>
+    <>
+      {/* Navbar Section */}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <h1>New here? Get ready to shape your future!</h1>
         </div>
-        <h2 className="registration-heading">Create an Account</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => handleChange(e, setUsername)}
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => handleChange(e, setEmail)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => handleChange(e, setPassword)}
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => handleChange(e, setConfirmPassword)}
-          />
-          <button type="submit">Sign Up</button>
-        </form>
-        {error && <p className="error">{error}</p>}
-        <p>
-          Yes, I have an account? <Link to="/">Login</Link>
-        </p>
+      </nav>
+
+      {/* Registration Page Section */}
+      <div className="registration-container">
+        <div className="illustration1">
+          <img src={Illustration1} alt="Running Illustration" />
+        </div>
+        <div className="registration-form">
+          <div className="header-with-logo">
+            <img src={Logo} alt="FitMeal Logo" className="logo" />
+            <h1 id="header">FitMeal Partner</h1>
+          </div>
+          <h2 className="registration-heading">Create an Account</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => handleChange(e, setUsername)}
+            />
+            <input
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => handleChange(e, setEmail)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => handleChange(e, setPassword)}
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => handleChange(e, setConfirmPassword)}
+            />
+            <button type="submit">Sign Up</button>
+          </form>
+          {error && <p className="error">{error}</p>}
+          <p>
+            Already have an account? <Link to="/Login">Login here</Link>
+          </p>
+        </div>
+        <div className="illustration2">
+          <img src={Illustration2} alt="Running Illustration" />
+        </div>
       </div>
-      <div className="illustration2">
-        <img src={Illustration2} alt="Running Illustration" />
-      </div>
-    </div>
+    </>
   );
 };
 
