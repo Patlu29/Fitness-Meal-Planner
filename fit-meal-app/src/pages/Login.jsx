@@ -41,37 +41,47 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="illustration">
-        <img src={Illustration} alt="Running Illustration" />
-      </div>
-      <div className="login-form">
-        <div className="header-with-logo">
-          <img src={Logo} alt="FitMeal Logo" className="logo" />
-          <h1 id="header">FitMeal Partner</h1>
+    <>
+      {/* Navbar Section */}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <h1>I think I know who you are... Let's get you logged in!</h1>
         </div>
-        <h2 className="login-heading">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => handleChange(e, setEmail)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => handleChange(e, setPassword)}
-          />
-          <button type="submit">Login</button>
-        </form>
-        {error && <p className="error">{error}</p>}
-        <p>
-          Don’t have an account? <Link to="/register">Register</Link>
-        </p>
+      </nav>
+
+      {/* Login Page Section */}
+      <div className="login-container">
+        <div className="illustration">
+          <img src={Illustration} alt="Running Illustration" />
+        </div>
+        <div className="login-form">
+          <div className="header-with-logo">
+            <img src={Logo} alt="FitMeal Logo" className="logo" />
+            <h1 id="header">FitMeal Partner</h1>
+          </div>
+          <h2 className="login-heading">Login</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => handleChange(e, setEmail)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => handleChange(e, setPassword)}
+            />
+            <button type="submit">Login</button>
+          </form>
+          {error && <p className="error">{error}</p>}
+          <p>
+            Don’t have an account? <Link to="/register">Register</Link>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
