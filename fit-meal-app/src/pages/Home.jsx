@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../assets/styles/Home.css';
 
 const Home = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
@@ -16,36 +14,7 @@ const Home = () => {
       <nav className="navbar">
         <div className="navbar-content">
           <h1>FitMeal Partner</h1>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="menu-button"
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
         </div>
-        <ul className={`dropdown-menu ${menuOpen ? 'show' : ''}`}>
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/meal-planner" onClick={() => setMenuOpen(false)}>
-              Meal Planner
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile" onClick={() => setMenuOpen(false)}>
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" onClick={() => setMenuOpen(false)}>
-              Login
-            </Link>
-          </li>
-        </ul>
       </nav>
 
       {/* Home Section */}
