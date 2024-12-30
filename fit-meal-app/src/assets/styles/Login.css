@@ -1,0 +1,174 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Container that holds the login form and illustration */
+.login-container {
+    display: flex;
+    flex-direction: row; /* Default for large screens */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; /* Ensure it takes up the full width */
+    max-width: 900px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    margin: 20px;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column; /* Stack the illustration and form vertically */
+        max-width: 100%;
+    }
+
+    .illustration {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .login-form {
+        padding: 20px;
+        margin: 10px;
+    }
+}
+
+/* Styling for the illustration section */
+.illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 20px;
+}
+
+/* Image styling for illustration */
+.illustration img {
+    width: 100%; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Adjust the width as needed */
+    max-height: 600px; /* Adjust the height as needed */
+}
+
+/* Styling for the login form */
+.login-form {
+    flex: 1;
+    padding: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ecffed;
+    border: 3px solid #e4f2e4;
+    border-radius: 10px;
+    margin: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+/* Login heading styling */
+.login-heading {
+    color: #1c5d1c;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Header with logo styling */
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Logo styling */
+.header-with-logo .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Styling for the login form title */
+.login-form h1 {
+    color: #189919;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Input field styling */
+.login-form input {
+    width: 95%; /* Ensure uniform width */
+    padding: 6px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #cfe6cf;
+    font-size: 1rem;
+}
+
+/* Input focus styling */
+.login-form input:focus {
+    border-color: #189919;
+    outline: none;
+    box-shadow: 0 0 5px rgba(24, 153, 25, 0.5);
+}
+
+/* Placeholder text styling */
+.login-form input::placeholder {
+    color: #616661; /* Set the placeholder color */
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Button styling */
+.login-form button {
+    width: 99%; /* Ensure uniform width */
+    background: #014801;
+    color: #fff;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold; /* Makes the font bold */
+    opacity: 0.9; /* Slightly lightens the font color */
+}
+
+/* Button hover effect */
+.login-form button:hover {
+    background: #247b24;
+}
+
+/* Styling for the paragraph under the login form */
+.login-form p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Styling for the register link */
+.login-form a {
+    color: #1c5d1c;
+    text-decoration: none;
+    font-weight: bold; /* Makes the font bold */
+    opacity: 0.9;
+}
+
+/* Hover effect for the register link */
+.login-form a:hover {
+    text-decoration: underline;
+}
