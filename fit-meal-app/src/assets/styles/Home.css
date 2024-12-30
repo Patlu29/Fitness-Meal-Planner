@@ -16,6 +16,7 @@
 }
 
 .navbar-content {
+  margin-right: 40px;
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;
