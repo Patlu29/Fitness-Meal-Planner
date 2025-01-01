@@ -16,19 +16,16 @@ const RegistrationPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic form validation
     if (!username || !email || !password || !confirmPassword) {
       setError("All fields are required.");
       return;
     }
 
-    // Check if passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
     }
 
-    // Validate email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address.");
@@ -37,15 +34,10 @@ const RegistrationPage = () => {
 
     try {
       await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
-      // Redirect or show success message after registration
+      alert("Registration successful!");
     } catch (err) {
-      setError(err.response.data.message);
+      setError(err.response?.data?.message || 'An error occurred.');
     }
-  };
-
-  const handleChange = (e, setter) => {
-    setter(e.target.value);
-    setError(''); // Clear the error when the user starts typing
   };
 
   return (
@@ -73,25 +65,25 @@ const RegistrationPage = () => {
               type="text"
               placeholder="Username"
               value={username}
-              onChange={(e) => handleChange(e, setUsername)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="email"
               placeholder="E-mail"
               value={email}
-              onChange={(e) => handleChange(e, setEmail)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => handleChange(e, setPassword)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <input
               type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
-              onChange={(e) => handleChange(e, setConfirmPassword)}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <button type="submit">Sign Up</button>
           </form>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../components/styles/Login.css';
 import Illustration from '../components/images/icon.jpg';
@@ -9,18 +9,16 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic form validation
     if (!email || !password) {
       setError('Please fill in both email and password.');
       return;
     }
 
-    // Validate email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address.');
@@ -29,18 +27,11 @@ const Login = () => {
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-      localStorage.setItem('token', response.data.token);
-
-      // Redirect to Home page after successful login
-      navigate('/home');
+      localStorage.setItem('token', response.data.token); // Save token to localStorage
+      navigate('/home'); // Redirect to Home page after login
     } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred. Please try again.');
+      setError(err.response?.data?.message || 'An error occurred.');
     }
-  };
-
-  const handleChange = (e, setter) => {
-    setter(e.target.value);
-    setError(''); // Clear the error when the user starts typing
   };
 
   return (
@@ -68,13 +59,13 @@ const Login = () => {
               type="email"
               placeholder="E-mail"
               value={email}
-              onChange={(e) => handleChange(e, setEmail)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => handleChange(e, setPassword)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit">Login</button>
           </form>
