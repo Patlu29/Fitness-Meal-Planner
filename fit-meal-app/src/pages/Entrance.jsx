@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import '../assets/styles/Home.css';
+import '../components/styles/Entrance.css';
 
-const Home = () => {
+const Entrance = () => {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
@@ -29,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Entrance;

@@ -1,0 +1,328 @@
+/* Container Styles */
+.container {
+  margin-left: 185px; /* Adjust for sidebar and navbar */
+  padding: 20px; /* Add padding around the content */
+  background-color: white; /* White background for better contrast */
+  box-shadow: 0 0 25px #77c077; /* Shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 1400px; /* Centered layout */
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 5px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.container .first,
+.second,
+.third {
+  height: 280px;
+  width: 420px;
+}
+
+/* Adjust container layout for smaller screens */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 150px; /* Adjust for sidebar on medium screens */
+  }
+  .container .first,
+  .second,
+  .third {
+    width: 300px; /* Decrease width for better fit */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 100px; /* Adjust for sidebar on small screens */
+  }
+  .container .first,
+  .second,
+  .third {
+    width: 100%; /* Full width on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-left: 80px; /* Adjust for sidebar on extra small screens */
+  }
+  .container .first,
+  .second,
+  .third {
+    width: 100%; /* Full width for very small screens */
+  }
+}
+
+.session {
+  margin-top: -240px;
+  width: 350px;
+}
+
+.session button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  background-color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and active states */
+}
+
+/* Hover effect */
+.session button:hover {
+  background-color: #77c077; /* Hover background color */
+  color: white; /* Hover text color */
+  border-radius: 10px;
+}
+
+/* Active button styles (when clicked) */
+.session button:focus {
+  background-color: #165016; /* Active background color */
+  color: white; /* Active text color */
+  outline: none;
+  border-radius: 10px; /* Remove default outline */
+}
+
+.session .date-picker {
+  background-color: #165016;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  size: 100px;
+  padding: 5px;
+}
+
+.recommand {
+  margin-left: 160px;
+  margin-top: -15px;
+  font-size: 20px;
+  position: absolute;
+}
+
+.recommand h5 {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #165016;
+  color: #ffffff;
+}
+
+.food {
+  margin-left: 150px;
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.food img {
+  width: 70px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.food div p {
+  max-width: 60px;
+  max-height: 50px;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #165016;
+}
+
+.food div {
+  margin-top: 10px;
+  border: 1px solid #77c077;
+  border-radius: 15px;
+  justify-items: center;
+}
+
+.target h6 {
+  width: 200px;
+  margin: 10px 0px 0px 150px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #d5efd5;
+}
+
+.third,
+.second {
+  background-color: #d5efd5;
+  border-radius: 10px;
+}
+
+.TodayExtra {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.TodayExtra div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.extrameal,
+.today {
+  margin-top: -10px;
+  justify-items: center;
+}
+
+.extrameal h5,
+.today h5 {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #165016;
+  color: #ffffff;
+}
+
+.meter-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.progress-meter {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #165016;
+  border-radius: 5px;
+}
+
+.meter-container p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #165016;
+}
+
+.fireimg {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  background-color: #d5efd5;
+}
+
+.fireCalorie {
+  color: #165016;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.gauge {
+  width: 400px;
+  height: 150px;
+}
+
+.gauge-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.app-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #c8e6c9;
+  width: 0px;
+  height: 240px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.addbutton {
+  background-color: #165016;
+  padding: 10px;
+  margin-top: -80px;
+  margin-left: -10px;
+}
+
+.extra-meals-container h3 {
+  margin-top: -50px;
+  margin-left: 25px;
+  color: #2e7d32;
+  font-size: 15px;
+  text-align: center;
+}
+
+.extra-meals-container h4 {
+  margin-top: -32px;
+  color: #388e3c;
+  text-align: end;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.meals-grid p {
+  margin: 80px 0;
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+  display:flex;
+  flex-direction: row;
+}
+
+/* Meal card styles */
+.meal-card {
+  background-color: #ffffff;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  width: 100px;
+}
+
+.meal-card h4 {
+  color: #165016;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+.meal-card p {
+  color: #555;
+  font-size: 14px;
+  width: 100px;
+}
+
+.meal-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Add Extra Meal button */
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.sessionbutton {
+  color: #165016;
+}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../assets/styles/Register.css';
-import Illustration1 from '../assets/images/ip(1).jpg';
-import Illustration2 from '../assets/images/ip(2).jpg';
-import Logo from '../assets/images/logobowl.jpg';
+import '../components/styles/Register.css';
+import Illustration1 from '../components/images/ip(1).jpg';
+import Illustration2 from '../components/images/ip(2).jpg';
+import Logo from '../components/images/logobowl.jpg';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');

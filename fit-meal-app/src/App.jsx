@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import MealPlanner from './pages/MealPlanner';
-import Profile from './pages/Profile';
+import Login from '../src/pages/Login';
+import Register from '../src/pages/Register';
+import Entrance from '../src/pages/Entrance';
+import MealPlanner from '../src/pages/MealPlanner';
+import Profile from '../src/pages/Profile';
+//import Home from '../src/components/Home/Home'; // Import Home component
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Entrance />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/meal-planner" element={<MealPlanner />} />

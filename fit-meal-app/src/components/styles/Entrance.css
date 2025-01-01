@@ -1,5 +1,11 @@
 /* Navbar Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .navbar {
+  margin: 0;
   display: flex;
   justify-content: center; /* Center all navbar content */
   align-items: center;
@@ -27,15 +33,6 @@
   font-size: 1.5rem;
   margin: 0;
   white-space: nowrap;
-}
-
-/* Remove dropdown menu styles since no longer needed */
-.dropdown-menu {
-  display: none;
-}
-
-.dropdown-menu.show {
-  display: none;
 }
 
 /* Home Section Styles */

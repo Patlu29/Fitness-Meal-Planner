@@ -1,37 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../assets/styles/Login.css';
-import Illustration from '../assets/images/icon.jpg';
-import Logo from '../assets/images/logobowl.jpg';
+import '../components/styles/Login.css';
+import Illustration from '../components/images/icon.jpg';
+import Logo from '../components/images/logobowl.jpg';
 
-const LoginPage = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic form validation
     if (!email || !password) {
-      setError("Please fill in both email and password.");
+      setError('Please fill in both email and password.');
       return;
     }
 
     // Validate email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
+      setError('Please enter a valid email address.');
       return;
     }
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
-      // Redirect or update UI after successful login
+
+      // Redirect to Home page after successful login
+      navigate('/home');
     } catch (err) {
-      setError(err.response.data.message);
+      setError(err.response?.data?.message || 'An error occurred. Please try again.');
     }
   };
 
@@ -85,4 +88,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
