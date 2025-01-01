@@ -70,6 +70,13 @@ const Home = () => {
               Profile
             </Link>
           </li>
+          <li>
+            <Link
+              to="/Login"
+              className={location.pathname === "/profile" ? "active" : ""}>
+              Sign Out
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -85,6 +92,7 @@ const Home = () => {
         />
       )}
     <CalorieValues />
+
     </>
   );
 };

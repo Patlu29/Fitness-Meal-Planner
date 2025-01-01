@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ProfilePage.css';
-import Illustration from './icon.png'; // Adjust path as necessary
-import Logo from './logobowl.png'; // Adjust path as necessary
+import '../components/styles/ProfilePage.css';
+import Illustration from '../components/images/icon.jpg'; // Adjust path as necessary
+import Logo from '../components/images/logobowl.jpg'; // Adjust path as necessary
 
 function ProfilePage() {
   const [formData, setFormData] = useState({
@@ -212,3 +212,4 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+

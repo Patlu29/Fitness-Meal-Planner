@@ -1,24 +1,28 @@
 /* Container Styles */
-.container {
-  margin-left: 185px; /* Adjust for sidebar and navbar */
+body {
+  margin: 1px;
+
+}
+.container { /* Adjust for sidebar and navbar */
   padding: 20px; /* Add padding around the content */
   background-color: white; /* White background for better contrast */
-  box-shadow: 0 0 25px #77c077; /* Shadow for depth */
+  box-shadow: 0 0 15px #77c077; /* Shadow for depth */
   border-radius: 8px; /* Rounded corners */
   max-width: 1400px; /* Centered layout */
-  margin-right: 5px;
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-top: 5px;
+  margin: 0 5px 0 5px;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
-
+.main-content {
+  margin-top: -10px;
+}
 .container .first,
 .second,
 .third {
-  height: 280px;
-  width: 420px;
+  height: 300px;
+  width: 410px;
 }
 
 /* Adjust container layout for smaller screens */
@@ -124,7 +128,6 @@
 .food div p {
   max-width: 60px;
   max-height: 50px;
-  margin-top: -6px;
   margin-bottom: 8px;
   font-size: 14px;
   color: #165016;
@@ -234,9 +237,8 @@
 .app-container {
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #c8e6c9;
+  background-color: #d5efd5;
   width: 0px;
-  height: 240px;
   border-radius: 10px;
   width: 400px;
 }
@@ -250,22 +252,23 @@
 
 .extra-meals-container h3 {
   margin-top: -50px;
-  margin-left: 25px;
+  margin-left: 45px;
   color: #2e7d32;
   font-size: 15px;
   text-align: center;
 }
 
 .extra-meals-container h4 {
-  margin-top: -32px;
+  margin-top: -18px;
   color: #388e3c;
   text-align: end;
 }
 
 .meals-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 15px;
   margin-top: 10px;
 }
 
@@ -284,15 +287,15 @@
   border: 1px solid #c8e6c9;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
   width: 100px;
+  margin-top: 5px;
 }
 
 .meal-card h4 {
   color: #165016;
   font-size: 18px;
-  margin-bottom: 5px;
   text-align: start;
+  margin-top: -10px;
 }
 
 .meal-card p {
@@ -300,6 +303,7 @@
   font-size: 14px;
   width: 100px;
 }
+
 
 .meal-card:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);

@@ -67,6 +67,8 @@ body {
 
 /* Navbar Styles */
 .navbar {
+  margin-top: -225px;
+  margin-left: 180px; /* Push content to the right to avoid overlap with sidebar */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,18 +76,16 @@ body {
   padding: 10px;
   color: rgb(67, 87, 75);
   position: sticky;
-  top: 0;
   z-index: 1000;
-  width: calc(100% - 200px);
-  margin-left: 180px;
   flex-wrap: wrap;
+  width: calc(100% - 180px); /* Adjust width to account for sidebar */
+  box-shadow: 0 2px 5px #165016;
 }
 
 .navbar-left h1 {
   margin: 0;
   margin-left: 20px;
   font-size: 20px;
-  font-family: 'Arial', sans-serif;
   font-weight: bold;
 }
 
@@ -104,7 +104,6 @@ body {
   padding: 8px 15px;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'Arial', sans-serif;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -121,6 +120,13 @@ body {
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 180px; /* Ensure content doesn't overlap with sidebar */
+  padding: 20px;
+  width: calc(100% - 180px); /* Adjust content width */
 }
 
 /* Responsive Styles */
@@ -156,6 +162,11 @@ body {
   .profile-logo {
     width: 35px;
     height: 35px;
+  }
+
+  .main-content {
+    margin-left: 150px; /* Adjust main content to fit */
+    width: calc(100% - 150px);
   }
 }
 
@@ -195,6 +206,11 @@ body {
     width: 30px;
     height: 30px;
   }
+
+  .main-content {
+    margin-left: 100px; /* Adjust main content to fit */
+    width: calc(100% - 100px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -231,5 +247,10 @@ body {
   .profile-logo {
     width: 25px;
     height: 25px;
+  }
+
+  .main-content {
+    margin-left: 80px; /* Adjust main content to fit */
+    width: calc(100% - 80px);
   }
 }

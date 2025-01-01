@@ -1,6 +1,7 @@
 import React from "react";
 import TodaySession from "./TodaySessions";
 import ExtraMeal from "./ExtraMeal";
+import "../styles/Content.css";
 
 const HomeContainer = () => {
   return (

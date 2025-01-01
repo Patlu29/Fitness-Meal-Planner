@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.navbar {
+.Entrancenavbar {
   margin: 0;
   display: flex;
   justify-content: center; /* Center all navbar content */

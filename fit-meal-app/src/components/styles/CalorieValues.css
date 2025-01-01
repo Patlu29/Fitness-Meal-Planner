@@ -8,6 +8,7 @@
     background-color: white;
     box-shadow: 0 0 25px #77c077;
     border-radius: 10px; /* Adjust this value to avoid sidebar interference, depending on your sidebar width */
+    margin-top: -10px;
   }
   
   .food-item {

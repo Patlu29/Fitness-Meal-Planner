@@ -26,18 +26,18 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-      localStorage.setItem('token', response.data.token); // Save token to localStorage
-      navigate('/home'); // Redirect to Home page after login
+      const response = await axios.post('http://localhost:5000/users/login', { email, password });
+      localStorage.setItem('token', JSON.stringify(response.data)); // Save user info (or token) to localStorage
+      navigate('/profile'); // Navigate to ProfilePage on successful login
     } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred.');
+      setError(err.response?.data?.error || 'An error occurred.');
     }
   };
 
   return (
     <>
       {/* Navbar Section */}
-      <nav className="navbar">
+      <nav className="Loginnavbar">
         <div className="navbar-content">
           <h1>I think I know who you are... Let's get you logged in!</h1>
         </div>

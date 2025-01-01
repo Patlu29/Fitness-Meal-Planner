@@ -11,7 +11,7 @@ const Entrance = () => {
   return (
     <>
       {/* Navbar Section */}
-      <nav className="navbar">
+      <nav className="Entrancenavbar">
         <div className="navbar-content">
           <h1>FitMeal Partner</h1>
         </div>
