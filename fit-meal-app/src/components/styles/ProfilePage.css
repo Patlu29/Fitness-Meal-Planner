@@ -1,0 +1,157 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+.profile-container .illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.profile-container .illustration img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.profile-form {
+  flex: 1;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ecffed;
+  border: 3px solid #e4f2e4;
+  border-radius: 10px;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.profile-form h2 {
+  color: #1c5d1c;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.header-with-logo .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-form h1 {
+  color: #189919;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-form input,
+.profile-form select {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #cfe6cf;
+  font-size: 1rem;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: #189919;
+  outline: none;
+  box-shadow: 0 0 5px rgba(24, 153, 25, 0.5);
+}
+
+.profile-form input::placeholder {
+  color: #616661;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.profile-form button {
+  width: 99%;
+  background: #014801;
+  color: #fff;
+  border: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.profile-form button:hover {
+  background: #247b24;
+}
+
+.go-back {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.go-back button {
+  color: #007bff;
+  background-color: rgba(245, 222, 179, 0) !important;
+  font-size: 14px;
+}
+
+.go-back button:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  color: #555;
+}
+
+/* New CSS for two-column form */
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.personal-details,
+.physical-details {
+  flex: 1;
+}
+
+.personal-details input,
+.physical-details input,
+.physical-details select {
+  width: 100%;
+}
