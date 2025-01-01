@@ -11,17 +11,32 @@ def get_users():
 @app.route('/users', methods=['POST'])
 def create_user():
     data = request.json
-    user = User(username=data['username'], email=data['email'], password=data['password'])
-    if User.query.filter_by(username=user.username).first():
+    if not data:
+        return jsonify({"error": "Invalid data"}), 400
+
+    username = data.get('username')
+    email = data.get('email')
+    password = data.get('password')
+
+    # Validate input
+    if not username or not email or not password:
+        return jsonify({"error": "All fields are required"}), 400
+
+    # Check if the username or email already exists
+    if User.query.filter_by(username=username).first():
         return jsonify({"error": "Username already exists"}), 400
-    if User.query.filter_by(email=user.email).first():
+    if User.query.filter_by(email=email).first():
         return jsonify({"error": "Email already exists"}), 400
+
+    # Create and save the new user
+    user = User(username=username, email=email, password=password)
     try:
         db.session.add(user)
         db.session.commit()
+        return jsonify(user.to_json()), 201  # Return created user's data
     except Exception as e:
-        return jsonify({"error":str(e)}), 400
-    return jsonify(user.to_json()), 201
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route('/users/<int:id>', methods=['GET'])
 def get_user(id):

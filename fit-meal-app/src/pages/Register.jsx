@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../components/styles/Register.css';
 import Illustration1 from '../components/images/ip(1).jpg';
@@ -12,6 +12,8 @@ const RegistrationPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +35,15 @@ const RegistrationPage = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
-      alert("Registration successful!");
+      await axios.post('http://localhost:5000/users', { username, email, password });
+      setSuccess("Registration successful!");
+      setError('');
+      setTimeout(() => {
+        navigate('/login'); // Redirect to Login page after 2 seconds
+      }, 2000);
     } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred.');
+      setError(err.response?.data?.error || 'An error occurred.');
+      setSuccess('');
     }
   };
 
@@ -88,6 +95,7 @@ const RegistrationPage = () => {
             <button type="submit">Sign Up</button>
           </form>
           {error && <p className="error">{error}</p>}
+          {success && <p className="success">{success}</p>}
           <p>
             Already have an account? <Link to="/Login">Login here</Link>
           </p>
