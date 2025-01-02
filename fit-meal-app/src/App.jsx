@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage"; // Import the ProfilePage compone
 import UserProfile from "./pages/UserProfile"; // Import the UserProfile component
 import AboutUs from "./pages/AboutUs";
 import Blogs from "./pages/Blogs";
+import Category from "./pages/Category";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/category" element={<Category />} />
       </Routes>
     </Router>
   );
