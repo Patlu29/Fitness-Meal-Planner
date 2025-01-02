@@ -10,3 +10,53 @@ body {
     justify-content: center;
     padding-top: 20px;
 }
+.healthy-benifits {
+    text-align: center;
+  }
+  
+  .healthy-benifits h3 {
+    font-size: 24px;
+  }
+  
+  .marqueeimg {
+    position: relative;
+    overflow: hidden;
+    width: 1350px;
+    margin-left: 180px;
+    background-color: #f9f9f9;
+  }
+  
+  .marquee-track {
+    display: flex;
+    animation: marquee 15s linear infinite;
+  }
+  
+  .marquee-item {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust based on the size of your content */
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .marquee-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .marquee-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Marquee Animation */
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  

@@ -11,8 +11,8 @@ body {
   max-width: 1400px; /* Centered layout */
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  margin: 0 5px 0 5px;
+  gap: 30px;
+  margin: 0 -10px 0 -10px;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 .main-content {
