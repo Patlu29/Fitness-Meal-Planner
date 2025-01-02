@@ -28,7 +28,7 @@ body {
   
   .marquee-track {
     display: flex;
-    animation: marquee 15s linear infinite;
+    animation: marquee 60s linear infinite;
   }
   
   .marquee-item {
@@ -36,17 +36,21 @@ body {
     width: 150px; /* Adjust based on the size of your content */
     margin: 0 10px;
     text-align: center;
+    border:1px solid #1b5e20;
+    border-radius: 10px;
   }
   
   .marquee-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    width: 70px;
+    height: 70px;
   }
   
   .marquee-item p {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 12.5px;
     font-weight: bold;
   }
   

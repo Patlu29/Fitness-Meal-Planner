@@ -282,7 +282,7 @@ body {
 .profile-details-popup {
   position: absolute;
   font-family: 'Arial', sans-serif;
-  margin-left: 1060px;
+  margin-left: 1090px;
   bottom: -100px;
   top: 20px; /* Position at the bottom-left of the profile image */
   left: 0;
