@@ -8,6 +8,7 @@ import HomeContainer from "./HomeContainer";
 import AddExtraMeal from "./AddExtraMeal"; 
 import CalorieValues from "./CalorieValues";
 import HealthyBenifits from "./HealthyBenifits";
+import Footer from "./Footer";
 import axios from 'axios';
 
 const Home = () => {
@@ -114,6 +115,7 @@ const Home = () => {
       )}
       <CalorieValues />
       <HealthyBenifits />
+      <Footer />
     </>
   );
 };

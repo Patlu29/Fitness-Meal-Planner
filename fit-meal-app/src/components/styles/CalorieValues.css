@@ -3,12 +3,12 @@
     flex-wrap: wrap;
     justify-content: space-around; /* Distribute items in a row */
     gap: 10px; /* Add space between items */
-    padding-top: 20px; /* Add margin if needed */
     margin: 7px 5px 0 185px;
     background-color: white;
     box-shadow: 0 0 25px #77c077;
     border-radius: 10px; /* Adjust this value to avoid sidebar interference, depending on your sidebar width */
     margin-top: -10px;
+    height: 80px;
   }
   
   .food-item {
@@ -20,7 +20,7 @@
   
   .food-img {
     width: 70px; /* Adjust image size */
-    height: auto; /* Space between image and text */
+    height: 60px; /* Space between image and text */
   }
   
   .food-description {
