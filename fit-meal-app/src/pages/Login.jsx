@@ -26,13 +26,22 @@ const Login = () => {
     }
   
     try {
-      const response = await axios.post(
+      const loginResponse = await axios.post(
         'http://localhost:5000/users/login',
         { email, password },
-        { headers: { 'Content-Type': 'application/json' } } // Ensure JSON header
+        { headers: { 'Content-Type': 'application/json' } }
       );
-      localStorage.setItem('token', JSON.stringify(response.data));
-      navigate('/profile');
+
+      const token = loginResponse.data;
+      localStorage.setItem('token', JSON.stringify(token));
+
+      // Check if the email exists in the profile route
+      const profileResponse = await axios.get(`http://localhost:5000/profile/${email}`);
+      if (profileResponse.status === 200) {
+        navigate('/home'); // If profile exists, navigate to Home
+      } else {
+        navigate('/profile'); // If profile doesn't exist, navigate to ProfilePage
+      }
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred.');
     }

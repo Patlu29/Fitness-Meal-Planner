@@ -43,6 +43,7 @@ class Profile(db.Model):
 
     def to_json(self):
         return {
+            "id": self.id,
             "name": self.name,
             "email": self.email,
             "age": self.age,

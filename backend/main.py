@@ -102,6 +102,14 @@ def get_profile():
     profile = Profile.query.all()
     return jsonify({"profile": [profiles.to_json() for profiles in profile]}), 200
 
+@app.route('/profile/<email>', methods=['GET'])
+def get_profile_by_email(email):
+    profile = Profile.query.filter_by(email=email).first()
+    if profile:
+        return jsonify(profile.to_json()), 200
+    else:
+        return jsonify({"error": "Profile not found"}), 404
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
