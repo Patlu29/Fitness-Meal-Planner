@@ -283,7 +283,8 @@ body {
   position: absolute;
   font-family: 'Arial', sans-serif;
   margin-left: 1060px;
-  bottom: -60px; /* Position at the bottom-left of the profile image */
+  bottom: -100px;
+  top: 20px; /* Position at the bottom-left of the profile image */
   left: 0;
   background-color: #d6f0d6;
   border: 1px solid #ddd;

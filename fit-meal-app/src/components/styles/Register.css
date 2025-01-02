@@ -9,6 +9,10 @@ body {
     min-height: 100vh;
     background-color: #ffffff;
 }
+.RegisterNavbar {
+    display: flex;
+    color: #014801;
+}
 /* Main Container */
 .registration-container {
     display: flex;
@@ -20,6 +24,7 @@ body {
     max-width: 1200px;
     box-sizing: border-box;
     margin: 20px;
+    box-shadow: 0 0  25px #78eb78;
 }
 
 /* Responsive Styles */

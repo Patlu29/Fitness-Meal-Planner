@@ -50,7 +50,7 @@ const RegistrationPage = () => {
   return (
     <>
       {/* Navbar Section */}
-      <nav className="navbar">
+      <nav className="RegisterNavbar">
         <div className="navbar-content">
           <h1>New here? Get ready to shape your future!</h1>
         </div>

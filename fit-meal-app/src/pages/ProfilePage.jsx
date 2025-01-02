@@ -71,6 +71,12 @@ function ProfilePage() {
   };
 
   return (
+    <>
+    <nav className="ProfileNavbar">
+        <div className="navbar-content">
+          <h1>You're new here, right? Tell me a little about yourself!</h1>
+        </div>
+      </nav>
     <div className="profile-container">
       <div className="illustration">
         <img src={Illustration} alt="Illustration" />
@@ -181,6 +187,7 @@ function ProfilePage() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

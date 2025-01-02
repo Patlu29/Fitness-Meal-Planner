@@ -9,7 +9,10 @@ body {
     height: 100vh;
     background-color: #ffffff;
 }
-
+.LoginNavbar {
+    display: flex;
+    color: #014801;
+}
 /* Container that holds the login form and illustration */
 .login-container {
     display: flex;
@@ -21,6 +24,7 @@ body {
     max-width: 900px;
     box-sizing: border-box; /* Ensures padding doesn't affect the width */
     margin: 20px;
+    box-shadow: 0 0  25px #78eb78;
 }
 
 /* Adjust layout for smaller screens */

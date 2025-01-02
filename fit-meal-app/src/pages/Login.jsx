@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <>
       {/* Navbar Section */}
-      <nav className="Loginnavbar">
+      <nav className="LoginNavbar">
         <div className="navbar-content">
           <h1>I think I know who you are... Let's get you logged in!</h1>
         </div>
