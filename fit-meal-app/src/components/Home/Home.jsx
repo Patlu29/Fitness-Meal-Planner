@@ -76,7 +76,7 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link to="/about-us" className={location.pathname === "/about-us" ? "active" : ""}>
+            <Link to="/About-us" className={location.pathname === "/about-us" ? "active" : ""}>
               About Us
             </Link>
           </li>
@@ -86,7 +86,7 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link to="/blogs" className={location.pathname === "/blogs" ? "active" : ""}>
+            <Link to="/Blogs" className={location.pathname === "/blogs" ? "active" : ""}>
               Blogs
             </Link>
           </li>

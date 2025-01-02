@@ -1,13 +1,6 @@
 
-  
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .about-us-section {
+    font-family: 'Arial', sans-serif;
     padding: 30px;
     background-color: #a1dda7;
     border-radius: 15px;

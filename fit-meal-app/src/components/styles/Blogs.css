@@ -1,38 +1,82 @@
-.guide-container {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #9ff3cc;
-    border-radius: 15px;
+/* Blogs.css */
 
-    
+.guide-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  margin: 130vh 0 0 0;
+  max-width: 900px;
+  background-color: #d5efd5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #165016;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.h23 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #165016;
+}
+
+.guide {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #165016;
+  margin-bottom: 15px;
+}
+
+.ulist {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.ulist li {
+  margin-bottom: 10px;
+}
+
+ul.ulist .guide b {
+  color: #165016;
+}
+
+section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+center {
+  display: block;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #165016;
+}
+
+b {
+  font-weight: bold;
+  color: #165016;
+}
+
+@media (max-width: 768px) {
+  .guide-container {
+    padding: 15px;
   }
-   h1{
-    text-align: center;
-    color: #000000;
-  }  
-   h2, h3 {
-    padding-left: 15px;
-    color: #2c3e50;
+
+  .blog {
+    font-size: 2rem;
   }
-  
-  h4 {
-    margin: 25px;
-    margin-left: 35px;
-    color: #34495e;
+
+  .h23 {
+    font-size: 1.2rem;
   }
-  
-  ul {
-    margin: 10px 10px;
-    padding-left: 70px;
+
+  .guide {
+    font-size: 0.9rem;
   }
-  
-  ul li {
-    margin-bottom: 20px;
-  }
-  
-  li, p {
-    margin: 10px 50px;
-  }
+}
