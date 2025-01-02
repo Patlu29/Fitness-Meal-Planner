@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <ul>
           <li>
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+            <Link to="/home" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
           </li>
@@ -68,7 +68,7 @@ const Home = () => {
               to="/user-profile"
               className={location.pathname === "/user-profile" ? "active" : ""}
             >
-              View Profile
+              Your Profile
             </Link>
           </li>
           <li className="sign-out">

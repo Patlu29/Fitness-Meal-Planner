@@ -35,15 +35,26 @@ const Login = () => {
       const token = loginResponse.data;
       localStorage.setItem('token', JSON.stringify(token));
 
-      // Check if the email exists in the profile route
-      const profileResponse = await axios.get(`http://localhost:5000/profile/${email}`);
-      if (profileResponse.status === 200) {
-        navigate('/home'); // If profile exists, navigate to Home
-      } else {
-        navigate('/profile'); // If profile doesn't exist, navigate to ProfilePage
+      // Check if the profile exists by trying to fetch it
+      try {
+        const profileResponse = await axios.get(`http://localhost:5000/profile/${email}`);
+        
+        // If profile exists, navigate to Home
+        if (profileResponse.status === 200) {
+          navigate('/home');
+        }
+      } catch (err) {
+        if (err.response && err.response.status === 404) {
+          // If profile doesn't exist (404), navigate to ProfilePage to create a new profile
+          navigate('/profile');
+        } else {
+          // Handle other errors from the profile API
+          setError('An error occurred while fetching profile information.');
+        }
       }
+
     } catch (err) {
-      setError(err.response?.data?.error || 'An error occurred.');
+      setError(err.response?.data?.error || 'An error occurred during login.');
     }
   };
 
