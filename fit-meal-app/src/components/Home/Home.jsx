@@ -7,6 +7,7 @@ import signoutimg from '../images/signout.png';
 import HomeContainer from "./HomeContainer"; 
 import AddExtraMeal from "./AddExtraMeal"; 
 import CalorieValues from "./CalorieValues";
+import HealthyBenifits from "./HealthyBenifits";
 import axios from 'axios';
 
 const Home = () => {
@@ -112,6 +113,7 @@ const Home = () => {
         <AddExtraMeal onClose={() => setShowAddMeal(false)} />
       )}
       <CalorieValues />
+      <HealthyBenifits />
     </>
   );
 };
