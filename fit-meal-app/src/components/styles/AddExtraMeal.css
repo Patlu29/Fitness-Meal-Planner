@@ -49,7 +49,8 @@
     width: 100%;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
+    background-color: #d5efd5;
   }
   
   /* Button group styling */
@@ -60,7 +61,6 @@
   
   .button-group button {
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -68,22 +68,25 @@
   
   /* Save button styling */
   .save-button {
-    background-color: #28a745;
+    background-color: #1b5e20;
     color: #fff;
   }
   
   .save-button:hover {
-    background-color: #218838;
+    background-color: #d5efd5;
+    color: black;
   }
   
   /* Cancel button styling */
   .cancel-button {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid #1b5e20;
   }
   
   .cancel-button:hover {
     background-color: #c82333;
+    color: white;
   }
   .extra-meal-container {
     background-color: #e5f4e2; /* Light green background */
@@ -152,4 +155,12 @@
     font-size: 14px;
     margin-top: 10px;
   }
-  
+.logoimg {
+  width: 45px;
+  height: 45px;
+}
+.ExtraMealTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/AddExtraMeal.css";
+import logo from '../images/bowllogodark.jpg'
 
 const AddExtraMeal = ({ onClose, onAddMeal }) => {
   const [mealName, setMealName] = useState("");
@@ -34,8 +35,10 @@ const AddExtraMeal = ({ onClose, onAddMeal }) => {
 
   return (
     <div className="overlay">
+      
       <div className="modal">
         <div className="input-group">
+        <h3 className="ExtraMealTitle"><img src={logo} alt="bowllogo" className="logoimg" />Add Your Extra Meal</h3>
           <label htmlFor="date">Date</label>
           <input
             type="date"
