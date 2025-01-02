@@ -1,52 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../components/styles/ProfilePage.css';
-import Illustration from '../components/images/icon.jpg'; // Adjust path as necessary
-import Logo from '../components/images/logobowl.jpg'; // Adjust path as necessary
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "../components/styles/ProfilePage.css";
+import Illustration from "../components/images/icon.jpg"; // Adjust path as necessary
+import Logo from "../components/images/logobowl.jpg"; // Adjust path as necessary
 
 function ProfilePage() {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    age: '',
-    scope: '',
-    height: '',
-    weight: '',
-    eatingHabit: '',
-    target: '',
+    name: "",
+    email: "",
+    age: "",
+    scope: "",
+    height: "",
+    weight: "",
+    eatingHabit: "",
+    target: "",
   });
 
   const [bmi, setBmi] = useState(null);
-  const [bmiCategory, setBmiCategory] = useState('');
+  const [bmiCategory, setBmiCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          console.error('No token found, please log in');
-          return;
-        }
-
-        const res = await axios.get('http://localhost:5000/api/profile', {
-          headers: { 'x-auth-token': token },
-        });
-        setFormData(res.data); // Populate form with existing profile data
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-        setError('Failed to fetch profile data.');
-      }
-    };
-
-    fetchProfile();
-  }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const calculateBMI = (weight, height) => {
     if (weight && height) {
@@ -57,10 +32,15 @@ function ProfilePage() {
   };
 
   const getBMICategory = (bmi) => {
-    if (bmi < 18.5) return 'Underweight';
-    if (bmi >= 18.5 && bmi < 24.9) return 'Normal weight';
-    if (bmi >= 25 && bmi < 29.9) return 'Overweight';
-    return 'Obese';
+    if (bmi < 18.5) return "Underweight";
+    if (bmi >= 18.5 && bmi < 24.9) return "Normal weight";
+    if (bmi >= 25 && bmi < 29.9) return "Overweight";
+    return "Obese";
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -73,29 +53,21 @@ function ProfilePage() {
     setBmi(calculatedBmi);
     setBmiCategory(getBMICategory(calculatedBmi));
 
+    const profileData = { ...formData, user_id: 1 }; // Add user_id
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        setError('No token found, please log in.');
-        setLoading(false);
-        return;
-      }
-
-      await axios.post('http://localhost:5000/api/profile', formData, {
-        headers: { 'x-auth-token': token },
-      });
-
+      await axios.post("http://localhost:5000/profile", profileData);
       setLoading(false);
-      alert('Profile updated successfully!');
+      alert("Profile created successfully!");
+
+      // Redirect to Home after 2 seconds
+      setTimeout(() => {
+        navigate("/home"); // Redirect to the Home page
+      }, 2000);
     } catch (err) {
       setLoading(false);
-      setError('Error submitting profile. Please try again.');
+      setError("Error submitting profile. Please try again.");
       console.error(err);
     }
-  };
-
-  const handleGoBack = () => {
-    window.location.href = '/dashboard';
   };
 
   return (
@@ -186,7 +158,7 @@ function ProfilePage() {
             </div>
           </div>
           <button type="submit" disabled={loading}>
-            {loading ? 'Submitting...' : 'Submit'}
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
         {error && <p className="error-message">{error}</p>}
@@ -196,20 +168,20 @@ function ProfilePage() {
             <p>Your BMI is: {bmi}</p>
             <p>Category: {bmiCategory}</p>
             <p>
-              {bmiCategory === 'Underweight' && 'You may want to increase your calorie intake.'}
-              {bmiCategory === 'Normal weight' && 'Great! Keep maintaining a balanced diet.'}
-              {bmiCategory === 'Overweight' && 'Consider adjusting your diet and exercise routine.'}
-              {bmiCategory === 'Obese' && 'Consult a healthcare professional for guidance.'}
+              {bmiCategory === "Underweight" &&
+                "You may want to increase your calorie intake."}
+              {bmiCategory === "Normal weight" &&
+                "Great! Keep maintaining a balanced diet."}
+              {bmiCategory === "Overweight" &&
+                "Consider adjusting your diet and exercise routine."}
+              {bmiCategory === "Obese" &&
+                "Consult a healthcare professional for guidance."}
             </p>
           </div>
         )}
-        <div className="go-back">
-          <button onClick={handleGoBack}>Go Back to Dashboard</button>
-        </div>
       </div>
     </div>
   );
 }
 
 export default ProfilePage;
-

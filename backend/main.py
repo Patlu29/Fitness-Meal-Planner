@@ -1,6 +1,6 @@
 from flask import request, jsonify
 from config import app, db
-from models import User, LoginRecord
+from models import User, LoginRecord, Profile
 
 @app.route('/users', methods=['GET'])
 def get_users():
@@ -70,6 +70,37 @@ def get_login_records():
     records = LoginRecord.query.all()
     return jsonify({"login_records": [record.to_json() for record in records]}), 200
 
+@app.route('/profile', methods=['POST'])
+def create_profile():
+    data = request.json
+    if not data:
+        return jsonify({"error": "Invalid data"}), 400
+
+    user_id = data.get('user_id')
+    name = data.get('name')
+    email = data.get('email')
+    age = data.get('age')
+    scope = data.get('scope')
+    height = data.get('height')
+    weight = data.get('weight')
+    eating_habit = data.get('eating_habit')
+    target = data.get('target')
+
+    if not user_id or not name or not email or not age or not scope or not height or not weight:
+        return jsonify({"error": "All fields are required"}), 400
+
+    profile = Profile(user_id=user_id, name=name, email=email, age=age, scope=scope, height=height, weight=weight, eating_habit=eating_habit, target=target)
+    try:
+        db.session.add(profile)
+        db.session.commit()
+        return jsonify(profile.to_json()), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/profile', methods=['GET'])
+def get_profile():
+    profile = Profile.query.all()
+    return jsonify({"profile": [profiles.to_json() for profiles in profile]}), 200
 
 if __name__ == '__main__':
     with app.app_context():
