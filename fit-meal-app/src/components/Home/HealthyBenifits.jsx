@@ -23,7 +23,7 @@ const HealthyBenifits = () => {
 
   return (
     <div className="healthy-benifits">
-      <h3>Healthy Benefits</h3>
+      <h3>Healthy Benefits :</h3>
       <div className="marqueeimg">
         <div className="marquee-track">
           {images.map((image, index) => (

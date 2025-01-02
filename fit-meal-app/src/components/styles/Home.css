@@ -67,7 +67,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  margin-top: -90px;
+  margin-top: -25px;
   margin-left: 180px; /* Push content to the right to avoid overlap with sidebar */
   display: flex;
   justify-content: space-between;
