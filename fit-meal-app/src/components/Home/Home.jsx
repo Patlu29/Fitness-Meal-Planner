@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Home.css";
-import FitMealLogo from "../images/slideLogo.jpg"; // Adjust the path to your image file
+import FitMealLogo from "../images/slideLogo.jpg";
 import ProfileLogo from "../images/proileLogo.jpg";
-import signoutimg from '../images/signout.png' // Replace with the path to your profile logo
-import HomeContainer from "./HomeContainer"; // Import the App component
-import AddExtraMeal from "./AddExtraMeal"; // Import the AddExtraMeal component
+import signoutimg from '../images/signout.png';
+import HomeContainer from "./HomeContainer"; 
+import AddExtraMeal from "./AddExtraMeal"; 
 import CalorieValues from "./CalorieValues";
+import axios from 'axios';
 
 const Home = () => {
   const location = useLocation();
-  const [showAddMeal, setShowAddMeal] = useState(false); // State to show/hide the AddExtraMeal modal
+  const [showAddMeal, setShowAddMeal] = useState(false);
+  const [profile, setProfile] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const email = token?.user?.email;
+
+    const fetchProfile = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/profile/${email}`);
+        setProfile(response.data);
+      } catch (err) {
+        console.error("Error fetching profile data.", err);
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   return (
     <>
@@ -20,7 +39,23 @@ const Home = () => {
           <h1>Your Diet Planner</h1>
         </div>
         <div className="navbar-right">
-          <img src={ProfileLogo} alt="Profile" className="profile-logo" />
+          <img
+            src={ProfileLogo}
+            alt="Profile"
+            className="profile-logo"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          />
+          {isHovered && profile && (
+            <div className="profile-details-popup">
+              <p><strong>Name:</strong> {profile.name}</p>
+              <p><strong>Email:</strong> {profile.email}</p>
+              <p><strong>Age:</strong> {profile.age}</p>
+              <p><strong>Height:</strong> {profile.height} cm</p>
+              <p><strong>Weight:</strong> {profile.weight} kg</p>
+              <p><strong>Target:</strong> {profile.target}</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -40,43 +75,28 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/about-us"
-              className={location.pathname === "/about-us" ? "active" : ""}
-            >
+            <Link to="/about-us" className={location.pathname === "/about-us" ? "active" : ""}>
               About Us
             </Link>
           </li>
           <li>
-            <Link
-              to="/category"
-              className={location.pathname === "/category" ? "active" : ""}
-            >
+            <Link to="/category" className={location.pathname === "/category" ? "active" : ""}>
               Category
             </Link>
           </li>
           <li>
-            <Link
-              to="/blogs"
-              className={location.pathname === "/blogs" ? "active" : ""}
-            >
+            <Link to="/blogs" className={location.pathname === "/blogs" ? "active" : ""}>
               Blogs
             </Link>
           </li>
           <li>
-            <Link
-              to="/user-profile"
-              className={location.pathname === "/user-profile" ? "active" : ""}
-            >
+            <Link to="/user-profile" className={location.pathname === "/user-profile" ? "active" : ""}>
               Your Profile
             </Link>
           </li>
           <li className="sign-out">
-            <Link
-              to="/Login"
-              className={location.pathname === "/profile" ? "active" : ""} 
-            >
-              <img src={signoutimg} alt="signout"  className="signoutimg"/>Sign Out
+            <Link to="/Login" className={location.pathname === "/profile" ? "active" : ""}>
+              <img src={signoutimg} alt="signout" className="signoutimg"/>Sign Out
             </Link>
           </li>
         </ul>
@@ -84,14 +104,12 @@ const Home = () => {
 
       {/* Main Content */}
       <div className="main-content">
-        <HomeContainer /> {/* Embedding the App component here */}
+        <HomeContainer />
       </div>
 
       {/* Add Extra Meal Modal */}
       {showAddMeal && (
-        <AddExtraMeal
-          onClose={() => setShowAddMeal(false)} // Pass a callback to close the modal
-        />
+        <AddExtraMeal onClose={() => setShowAddMeal(false)} />
       )}
       <CalorieValues />
     </>

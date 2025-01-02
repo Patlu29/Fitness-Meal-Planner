@@ -271,3 +271,37 @@ body {
   margin-bottom: -8px;
   border-radius: 10px;
 }
+.profile-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative; /* Set relative positioning for positioning child elements */
+}
+
+.profile-details-popup {
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  margin-left: 1060px;
+  bottom: -60px; /* Position at the bottom-left of the profile image */
+  left: 0;
+  background-color: #d6f0d6;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the popup when hovered */
+.profile-logo:hover + .profile-details-popup {
+  opacity: 1;
+}
+
+/* Optional: Add hover effect for the profile logo */
+.profile-logo:hover {
+  opacity: 0.7;
+}
