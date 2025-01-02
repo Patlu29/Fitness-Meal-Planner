@@ -1,4 +1,5 @@
 from config import db
+from datetime import datetime
 
 
 class User(db.Model):
@@ -14,3 +15,12 @@ class User(db.Model):
             'email': self.email,
             'password': self.password
         }
+        
+        
+class LoginRecord(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def to_json(self):
+        return {"id": self.id, "user_id": self.user_id, "timestamp": self.timestamp.isoformat()}

@@ -1,12 +1,11 @@
 from flask import request, jsonify
 from config import app, db
-from models import User
+from models import User, LoginRecord
 
 @app.route('/users', methods=['GET'])
 def get_users():
     users = User.query.all()
-    json_list = [user.to_json() for user in users]
-    return jsonify({"users": json_list}), 200
+    return jsonify({"users": [user.to_json() for user in users]}), 200
 
 @app.route('/users', methods=['POST'])
 def create_user():
@@ -18,25 +17,21 @@ def create_user():
     email = data.get('email')
     password = data.get('password')
 
-    # Validate input
     if not username or not email or not password:
         return jsonify({"error": "All fields are required"}), 400
 
-    # Check if the username or email already exists
     if User.query.filter_by(username=username).first():
         return jsonify({"error": "Username already exists"}), 400
     if User.query.filter_by(email=email).first():
         return jsonify({"error": "Email already exists"}), 400
 
-    # Create and save the new user
     user = User(username=username, email=email, password=password)
     try:
         db.session.add(user)
         db.session.commit()
-        return jsonify(user.to_json()), 201  # Return created user's data
+        return jsonify(user.to_json()), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 @app.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
@@ -45,16 +40,36 @@ def get_user(id):
         return jsonify({"error": "User not found"}), 404
     return jsonify(user.to_json())
 
-# get a username for login
-@app.route('/users/login', methods=['GET'])
+@app.route('/users/login', methods=['POST'])
 def login():
     data = request.json
-    user = User.query.filter_by(username=data['username']).first()
+    if not data:
+        return jsonify({"error": "Invalid data"}), 400
+
+    email = data.get('email')
+    password = data.get('password')
+
+    if not email or not password:
+        return jsonify({"error": "Both email and password are required"}), 400
+
+    user = User.query.filter_by(email=email).first()
     if not user:
         return jsonify({"error": "User not found"}), 404
-    if user.password != data['password']:
+
+    if user.password != password:
         return jsonify({"error": "Invalid password"}), 400
-    return jsonify(user.to_json()), 200
+
+    login_record = LoginRecord(user_id=user.id)
+    db.session.add(login_record)
+    db.session.commit()
+
+    return jsonify({"message": "Login successful", "user": user.to_json()}), 200
+
+@app.route('/users/login/records', methods=['GET'])
+def get_login_records():
+    records = LoginRecord.query.all()
+    return jsonify({"login_records": [record.to_json() for record in records]}), 200
+
 
 if __name__ == '__main__':
     with app.app_context():

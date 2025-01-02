@@ -13,22 +13,26 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!email || !password) {
       setError('Please fill in both email and password.');
       return;
     }
-
+  
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address.');
       return;
     }
-
+  
     try {
-      const response = await axios.post('http://localhost:5000/users/login', { email, password });
-      localStorage.setItem('token', JSON.stringify(response.data)); // Save user info (or token) to localStorage
-      navigate('/profile'); // Navigate to ProfilePage on successful login
+      const response = await axios.post(
+        'http://localhost:5000/users/login',
+        { email, password },
+        { headers: { 'Content-Type': 'application/json' } } // Ensure JSON header
+      );
+      localStorage.setItem('token', JSON.stringify(response.data));
+      navigate('/profile');
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred.');
     }
