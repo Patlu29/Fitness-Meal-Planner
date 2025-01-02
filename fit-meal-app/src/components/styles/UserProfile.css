@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+.UserProfileContainer {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 25px #d6f0d6;
+    background-color: #d6f0d6;
+    border-radius: 10px;
+}
+.UserProfileContainer p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.UserProfileContainer h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #014801;
+    text-shadow: 0 0 50px #d6f0d6;
+}
+.Welcome {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Welcome p {
+    font-size: 50px;
+    color: #014801;
+}

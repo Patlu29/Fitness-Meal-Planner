@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../components/styles/UserProfile.css'
 
 const UserProfile = () => {
   const [profile, setProfile] = useState(null);
@@ -30,8 +31,12 @@ const UserProfile = () => {
   }
 
   return (
-    <div>
-      <h1>User Profile</h1>
+    <>
+    <nav className='Welcome'>
+      <p>WELCOME {profile.name}</p>
+    </nav>
+    <div className='UserProfileContainer'>
+      <h1 className='yourprofile'>Your Profile</h1>
       <p><strong>Name:</strong> {profile.name}</p>
       <p><strong>Email:</strong> {profile.email}</p>
       <p><strong>Age:</strong> {profile.age}</p>
@@ -39,6 +44,7 @@ const UserProfile = () => {
       <p><strong>Weight:</strong> {profile.weight} kg</p>
       <p><strong>Target:</strong> {profile.target}</p>
     </div>
+    </>
   );
 };
 
