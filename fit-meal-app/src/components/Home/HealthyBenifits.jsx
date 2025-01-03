@@ -1,20 +1,20 @@
 import React from "react";
 import "../styles/HealthyBenifits.css";
-import dates from "../HaelthyBenifitsImages/dates.jpg"; 
-import drynuts from "../HaelthyBenifitsImages/drynuts.jpg";
-import egg from '../HaelthyBenifitsImages/Egg White and Veggie Scramble.jpg';
-import fruits from '../HaelthyBenifitsImages/fruits.jpg';
-import greekyogurt from "../HaelthyBenifitsImages/Greek Yogurt Parfait.jpg";
-import grilledchicken from "../HaelthyBenifitsImages/Grilled Chicken Salad.jpg";
-import lentilsoup from "../HaelthyBenifitsImages/Lentil Soup with Spinach.jpg";
-import oats from "../HaelthyBenifitsImages/Overnight Oats.jpg";
-import smoothie from "../HaelthyBenifitsImages/Protein Smoothie.jpg";
-import salad from "../HaelthyBenifitsImages/salad.jpg";
-import tofu from "../HaelthyBenifitsImages/Spicy Tofu and Veggie Bowl.jpg";
-import stuffedpeper from "../HaelthyBenifitsImages/Stuffed Bell Peppers.jpg";
-import tunasalad from "../HaelthyBenifitsImages/Tuna Salad with Chickpeas.jpg";
-import vegetable from "../HaelthyBenifitsImages/vegetables.jpg";
-import water from "../HaelthyBenifitsImages/water.jpg";
+import dates from "../Home/HaelthyBenifitsImages/dates.jpg"; 
+import drynuts from "../Home/HaelthyBenifitsImages/drynuts.jpg";
+import egg from '../Home/HaelthyBenifitsImages/Egg White and Veggie Scramble.jpg';
+import fruits from '../Home/HaelthyBenifitsImages/fruits.jpg';
+import greekyogurt from "../Home/HaelthyBenifitsImages/Greek Yogurt Parfait.jpg";
+import grilledchicken from "../Home/HaelthyBenifitsImages/Grilled Chicken Salad.jpg";
+import lentilsoup from "../Home/HaelthyBenifitsImages/Lentil Soup with Spinach.jpg";
+import oats from "../Home/HaelthyBenifitsImages/Overnight Oats.jpg";
+import smoothie from "../Home/HaelthyBenifitsImages/Protein Smoothie.jpg";
+import salad from "../Home/HaelthyBenifitsImages/salad.jpg";
+import tofu from "../Home/HaelthyBenifitsImages/Spicy Tofu and Veggie Bowl.jpg";
+import stuffedpeper from "../Home/HaelthyBenifitsImages/Stuffed Bell Peppers.jpg";
+import tunasalad from "../Home/HaelthyBenifitsImages/Tuna Salad with Chickpeas.jpg";
+import vegetable from "../Home/HaelthyBenifitsImages/vegetables.jpg";
+import water from "../Home/HaelthyBenifitsImages/water.jpg";
 
 
 const HealthyBenifits = () => {
