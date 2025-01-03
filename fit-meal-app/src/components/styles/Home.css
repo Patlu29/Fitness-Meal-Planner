@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 /* Sidebar Styles */
@@ -45,7 +45,7 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: bold;
   display: block;
   padding: 10px 20px;
@@ -255,7 +255,8 @@ body {
   }
 }
 
-.sign-out {/*make this bottom of the screen */
+.sign-out {
+  /*make this bottom of the screen */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -281,7 +282,7 @@ body {
 
 .profile-details-popup {
   position: absolute;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   margin-left: 1090px;
   bottom: -100px;
   top: 20px; /* Position at the bottom-left of the profile image */

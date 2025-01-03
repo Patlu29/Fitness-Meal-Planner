@@ -24,7 +24,10 @@ const CalorieValues = () => {
       {foodItems.map((item, index) => (
         <div key={index} className="food-item">
           <img src={item.img} alt={item.description} className="food-img" />
-          <p className="food-description">{item.description} <br />{item.calories} calories</p>
+          <p className="food-description">
+            {item.description} <br />
+            {item.calories} calories
+          </p>
         </div>
       ))}
     </div>

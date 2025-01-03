@@ -102,6 +102,6 @@
 
   /* Add overflow: hidden; for smaller screens */
   body {
-    overflow: hidden; 
+    overflow: hidden;
   }
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import "../styles/Content.css";
-import fireImage from '../images/fire.png'; // Import the image
+import fireImage from "../images/fire.png"; // Import the image
 
 const Chart = ({ todayTarget, dailyGoal }) => {
   // Safeguard: Ensure dailyGoal is not zero to avoid division by zero
-  const progress = dailyGoal > 0 ? Math.min((todayTarget / dailyGoal) * 100, 100) : 0;
+  const progress =
+    dailyGoal > 0 ? Math.min((todayTarget / dailyGoal) * 100, 100) : 0;
 
   // Convert progress to the rotation degree for the gauge needle
   const rotation = (progress / 100) * 180 - 90; // Map progress to -90° to 90° for the needle
@@ -45,13 +46,7 @@ const Chart = ({ todayTarget, dailyGoal }) => {
           {/* Needle Center */}
           <circle cx="50" cy="50" r="2" fill="#000" />
           {/* Measured Value */}
-          <text
-            x="50"
-            y="45"
-            textAnchor="middle"
-            fontSize="8"
-            fill="#000"
-          >
+          <text x="50" y="45" textAnchor="middle" fontSize="8" fill="#000">
             {`${progress.toFixed(1)}%`}
           </text>
         </svg>

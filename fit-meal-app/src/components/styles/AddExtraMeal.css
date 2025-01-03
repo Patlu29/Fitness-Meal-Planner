@@ -1,160 +1,160 @@
 /* Overlay background for the modal */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  /* Modal box styling */
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    position: relative;
-  }
-  
-  /* Close button styling */
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Input group for labels and inputs */
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    background-color: #d5efd5;
-  }
-  
-  /* Button group styling */
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .button-group button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  /* Save button styling */
-  .save-button {
-    background-color: #1b5e20;
-    color: #fff;
-  }
-  
-  .save-button:hover {
-    background-color: #d5efd5;
-    color: black;
-  }
-  
-  /* Cancel button styling */
-  .cancel-button {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 1px solid #1b5e20;
-  }
-  
-  .cancel-button:hover {
-    background-color: #c82333;
-    color: white;
-  }
-  .extra-meal-container {
-    background-color: #e5f4e2; /* Light green background */
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .extra-meal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .extra-meal-header h4 {
-    color: #1b5e20; /* Dark green */
-    margin: 0;
-  }
-  
-  .date-display {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #1b5e20; /* Dark green */
-  }
-  
-  .date-display span {
-    margin-right: 5px;
-  }
-  
-  .extra-meals-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .meal-card {
-    background-color: #ffffff; /* White background */
-    border-radius: 10px;
-    padding: 10px;
-    flex: 1 1 calc(33.33% - 10px); /* 3 cards per row */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .meal-card h5 {
-    margin: 0;
-    font-size: 16px;
-    color: #1b5e20; /* Dark green */
-  }
-  
-  .meal-card p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #4d4d4d; /* Grey text */
-  }
-  
-  .meal-card strong {
-    color: #d32f2f; /* Red text for calories */
-    font-size: 15px;
-  }
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box styling */
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Input group for labels and inputs */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d5efd5;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Save button styling */
+.save-button {
+  background-color: #1b5e20;
+  color: #fff;
+}
+
+.save-button:hover {
+  background-color: #d5efd5;
+  color: black;
+}
+
+/* Cancel button styling */
+.cancel-button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 1px solid #1b5e20;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+  color: white;
+}
+.extra-meal-container {
+  background-color: #e5f4e2; /* Light green background */
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.extra-meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.extra-meal-header h4 {
+  color: #1b5e20; /* Dark green */
+  margin: 0;
+}
+
+.date-display {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1b5e20; /* Dark green */
+}
+
+.date-display span {
+  margin-right: 5px;
+}
+
+.extra-meals-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.meal-card {
+  background-color: #ffffff; /* White background */
+  border-radius: 10px;
+  padding: 10px;
+  flex: 1 1 calc(33.33% - 10px); /* 3 cards per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.meal-card h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #1b5e20; /* Dark green */
+}
+
+.meal-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #4d4d4d; /* Grey text */
+}
+
+.meal-card strong {
+  color: #d32f2f; /* Red text for calories */
+  font-size: 15px;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
 .logoimg {
   width: 45px;
   height: 45px;

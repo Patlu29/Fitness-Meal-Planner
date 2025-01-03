@@ -1,60 +1,61 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
-import '../components/styles/Login.css';
-import Illustration from '../components/images/icon.jpg';
-import Logo from '../components/images/logobowl.jpg';
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+import "../components/styles/Login.css";
+import Illustration from "../components/images/icon.jpg";
+import Logo from "../components/images/logobowl.jpg";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !password) {
-      setError('Please fill in both email and password.');
+      setError("Please fill in both email and password.");
       return;
     }
-  
+
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
+      setError("Please enter a valid email address.");
       return;
     }
-  
+
     try {
       const loginResponse = await axios.post(
-        'http://localhost:5000/users/login',
+        "http://localhost:5000/users/login",
         { email, password },
-        { headers: { 'Content-Type': 'application/json' } }
+        { headers: { "Content-Type": "application/json" } }
       );
 
       const token = loginResponse.data;
-      localStorage.setItem('token', JSON.stringify(token));
+      localStorage.setItem("token", JSON.stringify(token));
 
       // Check if the profile exists by trying to fetch it
       try {
-        const profileResponse = await axios.get(`http://localhost:5000/profile/${email}`);
-        
+        const profileResponse = await axios.get(
+          `http://localhost:5000/profile/${email}`
+        );
+
         // If profile exists, navigate to Home
         if (profileResponse.status === 200) {
-          navigate('/home');
+          navigate("/home");
         }
       } catch (err) {
         if (err.response && err.response.status === 404) {
           // If profile doesn't exist (404), navigate to ProfilePage to create a new profile
-          navigate('/profile');
+          navigate("/profile");
         } else {
           // Handle other errors from the profile API
-          setError('An error occurred while fetching profile information.');
+          setError("An error occurred while fetching profile information.");
         }
       }
-
     } catch (err) {
-      setError(err.response?.data?.error || 'An error occurred during login.');
+      setError(err.response?.data?.error || "An error occurred during login.");
     }
   };
 

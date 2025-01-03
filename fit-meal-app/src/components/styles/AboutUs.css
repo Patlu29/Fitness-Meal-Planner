@@ -1,25 +1,24 @@
+.about-us-section {
+  font-family: "Arial", sans-serif;
+  padding: 30px;
+  background-color: #a1dda7;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  max-height: 800px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-  .about-us-section {
-    font-family: 'Arial', sans-serif;
-    padding: 30px;
-    background-color: #a1dda7;
-    border-radius: 15px;
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
-    max-height: 800px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .about-us-heading {
-    font-size: 2.5em;
-    color: #446623;
-    margin-bottom: 20px;
-  }
-  
-  .about-us-paragraph {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.8;
-    margin-top: 10px;
-  }
+.about-us-heading {
+  font-size: 2.5em;
+  color: #446623;
+  margin-bottom: 20px;
+}
+
+.about-us-paragraph {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 10px;
+}

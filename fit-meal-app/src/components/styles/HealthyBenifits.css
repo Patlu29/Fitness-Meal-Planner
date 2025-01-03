@@ -1,66 +1,63 @@
 body {
-    background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: #f5f5f5;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .healthy-benifits {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5px;
 }
 
-  
-  .healthy-benifits h3 {
-    font-size: 20px;
-    margin-left: 200px;
-    color: #1b5e20;
+.healthy-benifits h3 {
+  font-size: 20px;
+  margin-left: 200px;
+  color: #1b5e20;
+}
 
+.marqueeimg {
+  position: relative;
+  overflow: hidden;
+  width: 1350px;
+  margin-left: 180px;
+  background-color: #f9f9f9;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: 150px; /* Adjust based on the size of your content */
+  margin: 0 10px;
+  text-align: center;
+  border: 1px solid #1b5e20;
+  border-radius: 10px;
+}
+
+.marquee-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+.marquee-item p {
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: bold;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
-  
-  .marqueeimg {
-    position: relative;
-    overflow: hidden;
-    width: 1350px;
-    margin-left: 180px;
-    background-color: #f9f9f9;
+  to {
+    transform: translateX(-100%);
   }
-  
-  .marquee-track {
-    display: flex;
-    animation: marquee 60s linear infinite;
-  }
-  
-  .marquee-item {
-    flex: 0 0 auto;
-    width: 150px; /* Adjust based on the size of your content */
-    margin: 0 10px;
-    text-align: center;
-    border:1px solid #1b5e20;
-    border-radius: 10px;
-  }
-  
-  .marquee-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    width: 70px;
-    height: 70px;
-  }
-  
-  .marquee-item p {
-    margin-top: 10px;
-    font-size: 12.5px;
-    font-weight: bold;
-  }
-  
-  /* Marquee Animation */
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
+}

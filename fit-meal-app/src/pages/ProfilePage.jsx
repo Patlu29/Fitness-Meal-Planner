@@ -72,121 +72,121 @@ function ProfilePage() {
 
   return (
     <>
-    <nav className="ProfileNavbar">
+      <nav className="ProfileNavbar">
         <div className="navbar-content">
           <h1>You're new here, right? Tell me a little about yourself!</h1>
         </div>
       </nav>
-    <div className="profile-container">
-      <div className="illustration">
-        <img src={Illustration} alt="Illustration" />
-      </div>
-      <div className="profile-form">
-        <div className="header-with-logo">
-          <img src={Logo} alt="Logo" className="logo" />
-          <h1>FitMeal Partner</h1>
+      <div className="profile-container">
+        <div className="illustration">
+          <img src={Illustration} alt="Illustration" />
         </div>
-        <h2 className="profile-heading">Profile Page</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-section">
-            <div className="personal-details">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="number"
-                name="age"
-                placeholder="Age"
-                value={formData.age}
-                onChange={handleChange}
-                required
-              />
-              <select
-                name="scope"
-                value={formData.scope}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Goal</option>
-                <option value="Lose Weight">Lose Weight</option>
-                <option value="Maintain">Maintain</option>
-                <option value="Gain">Gain</option>
-              </select>
-            </div>
-            <div className="physical-details">
-              <input
-                type="number"
-                name="height"
-                placeholder="Height (cm)"
-                value={formData.height}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="number"
-                name="weight"
-                placeholder="Weight (kg)"
-                value={formData.weight}
-                onChange={handleChange}
-                required
-              />
-              <select
-                name="eatingHabit"
-                value={formData.eatingHabit}
-                onChange={handleChange}
-              >
-                <option value="">Eating Habit</option>
-                <option value="Veg">Vegetarian</option>
-                <option value="Non-Veg">Non-Vegetarian</option>
-                <option value="Vegan">Vegan</option>
-                <option value="Other">Other</option>
-              </select>
-              <input
-                type="text"
-                name="target"
-                placeholder="Target"
-                value={formData.target}
-                onChange={handleChange}
-              />
-            </div>
+        <div className="profile-form">
+          <div className="header-with-logo">
+            <img src={Logo} alt="Logo" className="logo" />
+            <h1>FitMeal Partner</h1>
           </div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Submitting..." : "Submit"}
-          </button>
-        </form>
-        {error && <p className="error-message">{error}</p>}
-        {bmi && (
-          <div>
-            <h3>BMI Result</h3>
-            <p>Your BMI is: {bmi}</p>
-            <p>Category: {bmiCategory}</p>
-            <p>
-              {bmiCategory === "Underweight" &&
-                "You may want to increase your calorie intake."}
-              {bmiCategory === "Normal weight" &&
-                "Great! Keep maintaining a balanced diet."}
-              {bmiCategory === "Overweight" &&
-                "Consider adjusting your diet and exercise routine."}
-              {bmiCategory === "Obese" &&
-                "Consult a healthcare professional for guidance."}
-            </p>
-          </div>
-        )}
+          <h2 className="profile-heading">Profile Page</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-section">
+              <div className="personal-details">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="number"
+                  name="age"
+                  placeholder="Age"
+                  value={formData.age}
+                  onChange={handleChange}
+                  required
+                />
+                <select
+                  name="scope"
+                  value={formData.scope}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select Goal</option>
+                  <option value="Lose Weight">Lose Weight</option>
+                  <option value="Maintain">Maintain</option>
+                  <option value="Gain">Gain</option>
+                </select>
+              </div>
+              <div className="physical-details">
+                <input
+                  type="number"
+                  name="height"
+                  placeholder="Height (cm)"
+                  value={formData.height}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="number"
+                  name="weight"
+                  placeholder="Weight (kg)"
+                  value={formData.weight}
+                  onChange={handleChange}
+                  required
+                />
+                <select
+                  name="eatingHabit"
+                  value={formData.eatingHabit}
+                  onChange={handleChange}
+                >
+                  <option value="">Eating Habit</option>
+                  <option value="Veg">Vegetarian</option>
+                  <option value="Non-Veg">Non-Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input
+                  type="text"
+                  name="target"
+                  placeholder="Target"
+                  value={formData.target}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <button type="submit" disabled={loading}>
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+          {error && <p className="error-message">{error}</p>}
+          {bmi && (
+            <div>
+              <h3>BMI Result</h3>
+              <p>Your BMI is: {bmi}</p>
+              <p>Category: {bmiCategory}</p>
+              <p>
+                {bmiCategory === "Underweight" &&
+                  "You may want to increase your calorie intake."}
+                {bmiCategory === "Normal weight" &&
+                  "Great! Keep maintaining a balanced diet."}
+                {bmiCategory === "Overweight" &&
+                  "Consider adjusting your diet and exercise routine."}
+                {bmiCategory === "Obese" &&
+                  "Consult a healthcare professional for guidance."}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     </>
   );
 }

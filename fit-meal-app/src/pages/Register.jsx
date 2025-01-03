@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../components/styles/Register.css';
-import Illustration1 from '../components/images/ip(1).jpg';
-import Illustration2 from '../components/images/ip(2).jpg';
-import Logo from '../components/images/logobowl.jpg';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../components/styles/Register.css";
+import Illustration1 from "../components/images/ip(1).jpg";
+import Illustration2 from "../components/images/ip(2).jpg";
+import Logo from "../components/images/logobowl.jpg";
 
 const RegistrationPage = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
@@ -35,15 +35,19 @@ const RegistrationPage = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/users', { username, email, password });
+      await axios.post("http://localhost:5000/users", {
+        username,
+        email,
+        password,
+      });
       setSuccess("Registration successful!");
-      setError('');
+      setError("");
       setTimeout(() => {
-        navigate('/login'); // Redirect to Login page after 2 seconds
+        navigate("/login"); // Redirect to Login page after 2 seconds
       }, 2000);
     } catch (err) {
-      setError(err.response?.data?.error || 'An error occurred.');
-      setSuccess('');
+      setError(err.response?.data?.error || "An error occurred.");
+      setSuccess("");
     }
   };
 

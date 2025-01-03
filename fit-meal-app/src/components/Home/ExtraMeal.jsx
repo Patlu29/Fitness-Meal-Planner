@@ -12,7 +12,9 @@ const ExtraMeal = () => {
 
   return (
     <div className="app-container">
-      <button onClick={() => setIsAddMealOpen(true)} className="addbutton">✎Add Extra Meal</button>
+      <button onClick={() => setIsAddMealOpen(true)} className="addbutton">
+        ✎Add Extra Meal
+      </button>
       {isAddMealOpen && (
         <AddExtraMeal
           onClose={() => setIsAddMealOpen(false)}

@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom';
-import '../components/styles/Entrance.css';
+import { useNavigate } from "react-router-dom";
+import "../components/styles/Entrance.css";
 
 const Entrance = () => {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
