@@ -21,9 +21,17 @@ jobs:
         with:
           node-version: 18  # Use the version compatible with your project
 
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
 
       - name: Run frontend tests
-        working-directory: ./fit-meal-app/tests
+        working-directory: ./fit-meal-app  # Adjust this if necessary
         run: npm run test
