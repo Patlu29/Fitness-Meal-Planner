@@ -25,5 +25,5 @@ jobs:
         run: npm install
 
       - name: Run frontend tests
-        working-directory: fit-meal-app/tests
+        working-directory: ./fit-meal-app/tests
         run: npm run test
