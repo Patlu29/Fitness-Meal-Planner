@@ -33,8 +33,8 @@ const ExtraMeal = () => {
               <div key={index} className="meal-card">
                 <h4>{meal.mealType}: </h4>
                 <p>{meal.mealName}</p>
-                <p>{meal.mealWeight} grams/ml</p>
-                <p>{meal.mealCalories} calories</p>
+                <p>{meal.mealWeight} <b>grams/ml</b></p>
+                <p>{meal.mealCalories} <b>calories</b></p>
               </div>
             ))
           )}
