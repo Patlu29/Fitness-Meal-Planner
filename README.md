@@ -29,6 +29,7 @@ Integration: Seamlessly integrates with fitness meals.
    --> npm install
    --> npm run dev
 2. In second terminal:
+   --> pip install -r requirements.txt
    --> python main.py
    make sure that both are run
 
